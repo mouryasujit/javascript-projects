@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        body{
+            padding:  0 100px;
+            background:rgba(245, 222, 179, 0.767)
+        }
+        .container{
+            max-width: 1200px;
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            height: 80vh;
+            
+            
+        }
+        h1{
+            text-align: center;
+            background-color:#006780;
+            color: #fff;
+            margin:auto;
+            font-weight:700;
+            padding: 1rem;
+        }
+        textarea{
+            width: 99.5%;
+            height:70vh;
+            border:2px solid greenyellow;
+            font-size: 20px;
+        }
+        p{
+            text-align: center;
+            background-color: #006780;
+            color: #fff;
+            font-size: 25px;
+            padding: 10px;
+            margin: 0px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Word-Character Counter</h1>
+        <textarea name="" id="text-box" cols="30" rows="10"></textarea>
+        <p>
+            <span id="words">0 </span>words and 
+            <span id="char">0 </span>characters
+        </p>
+    </div>
+    <script>
+        let textbox=document.getElementById("text-box");
+        textbox.addEventListener('input',function(){
+            var text=this.value;
+            let char=text.length;
+            document.getElementById("char").innerHTML=char;
+
+            text = text.trim();
+            let words = text.split(" ");
+            var cleanlist = words.filter(function(elm){
+                return elm != "";
+            })
+            let ll=words.length;
+            console.log(words);
+            document.getElementById("words").innerHTML = ll;
+
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+         *{
+             padding: 0;
+             margin: 0;
+             box-sizing: border-box;
+         }
+         .container{
+             max-width: 800px;
+             width: 90%;
+             margin: auto;
+             padding: 0.5rem;
+             text-align: center;
+            position: relative;
+             border: 2px solid red;
+             border-radius: 10%; 
+             background-color: rgba(128, 128, 128, 0.422);
+             height: 70vh;
+         }
+         body{
+           
+             padding: 2rem;
+         }
+        h1{
+            position: absolute;
+            top: 28%;
+            left: 30%;
+            text-align: center;
+        }
+        .input1{
+            position: absolute;
+            top: 12rem;
+            left:10%;
+            width: 40%;
+        }
+        .input2{
+            position: absolute;
+            top: 12rem;
+            right:10%;
+            width: 40%;
+        } 
+        input{
+            width: 15rem;
+        }
+        .input1,.input2{
+            display: inline-block;
+            justify-content: center;
+            text-align: center;
+             
+             
+        }
+        .in{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        label{
+            font-size: 32px;
+            
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <h1>Temperature Converter</h1><br>
+        <div class="input1">
+            <label for="">Celcius</label><br>
+            <input type="number" value="0" id="cel" class="in">
+        </div>
+        <div class="input2">
+            <label for="">Fahrenheit</label><br>
+            <input type="number" value="32" id="fah" class="in">
+        </div>
+    </div>
+    <!-- #############################################################3havascript of conveter################################### -->
+    <script>
+        alert("please use landscape mode to view properly")
+        var cel = document.getElementById("cel");
+        var fah = document.getElementById("fah");
+        cel.addEventListener('input',function(){
+            let c = this.value;
+            let f = (c*9/5)+32;
+            if(!Number.isInteger(f)){
+                f=f.toFixed(4);
+            }
+            fah.value = f;
+        })
+        fah.addEventListener('input',function(){
+            let f=this.value;
+            let c= (f-32)*5/9;
+            if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+            }
+            cel.value=c;
+        })
+    </script>
+</body>
+</html>
